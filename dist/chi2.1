@@ -1,0 +1,109 @@
+.\" ted's homebrew stats programs
+.TH CHI2 L "22 Oct 1993"
+.SH NAME
+chi2 \- analyze contingency tables
+.SH SYNOPSIS
+.B chi2
+[
+.B \-lmkxp
+] 
+[ 
+.IR nrows ncols .\|.\|.
+]
+.SH DESCRIPTION
+.IX  chi2  ""  "\fLchi2\fP \(em analyze contingency tables"
+.IX  "analyze contingency tables \(em \fLchi2\fP"
+.LP
+.B chi2
+reads contingency tables from standard input and displays statistics
+about these tables on standard output.  The default statistic is
+Pearson's \(*x\v'-0.4'\s-32\s0\v'0.4', although a likelihood ratio statistic
+known as the G-statistic and mutual information can also be computed.
+Significance levels can also be printed.
+.PP
+For example,
+.IP
+.B
+example% chi2 -lmp 2 2
+.LP
+causes chi2 to analyze 2x2 tables taken from standard input.  Both
+mutual information and the G-statistic are computed and a significance
+level (p-value) is given for the value of the G-statistic.
+Significance level is meaningless for mutual information, so it is not
+printed.  
+.LP
+The tables can be given in free format and tags consisting of the
+remainder of the line after the last entry in the table are echoed on
+the output so that results can be easily sorted.  In the example
+above, the following input:
+.IP
+.nf
+10 0 0 10 tag1
+2 20
+5 10 tag2
+.LP
+would produce the following output:
+.IP
+.nf
+ 27.73 0.00000 1.00  tag1
+  3.39 0.06544 0.07  tag2
+.LP
+The first number on each output line is the G-statistic, the second is
+the significance level, and the third is the mutual information.  The
+remainder of the line contains the associated tag (if any).  The
+output lines are always in the order \(*x\v'-0.4'\s-32\s0\v'0.4', then G, and
+finally mutual information.  Significance values are printed
+immediately after the corresponding statistic.
+.SH OPTIONS
+.TP
+.B \-l
+Use a likelihood ratio test.  This test is also known as the
+G-statistic.  For tables where \(*x\v'-0.4'\s-32\s0\v'0.4' is appropriate, the
+G-statistic and pearson's \(*x\v'-0.4'\s-32\s0\v'0.4' should give nearly
+identical values.  Can be used with -k or -m options.
+.TP
+.B \-k
+If the -k command line option is given, or if neither l, m nor k are
+given, then Pearson's \(*x\v'-0.4'\s-32\s0\v'0.4' statistic is used.  if the
+expected value in any cell is too small, a warning is printed to standard
+error and the value -1 is used instead of the computed value.  The -x
+option turns off these warnings and causes the (bogus) value which is
+actually computed to be printed instead of -1.  Can be used with -l or
+-m options.  If none of -l, -k or -m are used, then -k is implied.
+.TP
+.B \-m
+Compute mutual information for each table.  Can be used with -l or -k
+options. 
+.TP
+.B \-p
+Estimate and print significance for the \(*x\v'-0.4'\s-32\s0\v'0.4' or G
+statistics if they are printed.  Significance for the
+\(*x\v'-0.4'\s-32\s0\v'0.4' and G statistics are computed separately.
+.TP
+.B \-x
+Don't print the error messages for the \(*x\v'-0.4'\s-32\s0\v'0.4' test when
+expected value in a cell is too small.  Also, use whatever junk is
+computed in these cases instead of substituting -1.
+.TP
+.B \-b and \-B
+These options change the estimators
+used to calculate any of selected statistics slightly.  The use of -b
+means that all probabilities will be estimated using Laplace's sample
+size correction in which (k+1)/(N+m) is used instead of k/N.  With -B,
+uniform prior, Bayesian estimators for the statistic in question will
+be used.  It isn't clear that \-B makes sense when using the
+likelihood ratio test (the G statistic).
+.SH "SEE ALSO"
+.BR hwcount (L),
+.BR compare (L),
+.BR grams (L),
+.BR words (L),
+.BR fwords (L),
+.SH NOTES
+.LP
+The -p option doesn't apply to mutual information.
+.LP
+The implications of using of -b or -B with -l aren't very clear.
+.SH BUGS
+.LP
+Tables with entirely zero rows or columns can cause problems. 

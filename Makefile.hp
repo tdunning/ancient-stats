@@ -1,0 +1,3 @@
+CC = gcc
+ARCH_CFLAGS = -g -Wall -DHPUX -I/usr/include
+ARCH_LDLIBS = 

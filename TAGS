@@ -1,0 +1,273 @@
+
+bigrams.c,187
+int read_word_counts(29,714
+char *find_word(58,1202
+#define gamma 85,1555
+double psi(90,1753
+double logl(108,1998
+double lr(141,2622
+void process_lines(175,3312
+int main(224,4219
+
+bit_count.c,181
+void bit_set(9,122
+void bit_clear(17,244
+int bit_test(25,371
+inline int bit_count(34,565
+int bitv_count(46,1158
+int xbit_count(60,1368
+void stopper(73,1505
+int main(79,1554
+
+cgram.c,67
+inline int getch(19,334
+void cgram_file(34,518
+int main(64,1039
+
+chi2.c,206
+#define sq(sq108,3510
+double chi2(118,3767
+#define gamma 166,4788
+double psi(171,4986
+double logl(189,5227
+double lr(223,5857
+double entropy_term(259,6560
+double mutual(279,6841
+int main(316,7569
+
+chi2_lib.c,103
+static double Z(21,471
+static double Q(27,555
+static double sum(52,968
+double significance(79,1425
+
+compare.c,59
+double logl(46,1346
+double lr(69,1746
+int main(107,2448
+
+cooc.c,127
+} word_info;word_info28,657
+int get_line(30,671
+void process(47,927
+hash_table read_hash_table(89,1820
+int main(110,2248
+
+cumulate.c,85
+int dbl_compare(14,286
+void sort(21,408
+double *read_file(27,533
+int main(49,929
+
+disk_hash.c,679
+#define ALLOCATION_QUANTUM 16,238
+} *dh_internal;dh_internal22,430
+int dh_roundup(24,447
+static unsigned int dh_hash(38,831
+static long hash3(61,1495
+#define HASHC 67,1632
+dh_pointer dh_malloc(105,2142
+dh_pointer dh_calloc(129,2658
+dh_table dh_make_table(135,2784
+static dh_key dh_strdup(157,3253
+void dh_free(169,3542
+static dh_bucket dh_make_bucket(186,3899
+dh_bucket dh_find(202,4318
+dh_bucket dh_find_or_create(224,4857
+dh_value dh_must_find(239,5156
+void dh_insert(258,5789
+void dh_insert_new(267,5970
+void dh_save(281,6205
+dh_table dh_open(314,6919
+dh_value the_int(348,7561
+dh_value the_float(359,7688
+dh_value the_voidp(370,7820
+int main(391,8146
+
+drand.c,255
+static void mutate_seed(21,485
+double x_erand48(41,880
+long x_nrand48(49,1077
+long x_lrand48(59,1262
+long x_jrand48(64,1323
+long x_mrand48(75,1526
+void x_srand48(80,1591
+unsigned short *x_seed48(87,1722
+void x_lcong48(100,2041
+int main(113,2316
+
+entropy.c,111
+#define gamma 13,290
+#define MAX_COUNTS 14,327
+double psi(21,537
+void do_entropy(39,778
+int main(113,2154
+
+error.c,136
+void make_progname(23,523
+FILE *efopen(37,766
+void *ecalloc(52,1047
+void *emalloc(65,1210
+void fatal(78,1358
+void warning(85,1486
+
+fwords.c,990
+#define DOC_ID_SIZE	56,1619
+int srch(95,2717
+void setup_buffer(114,3126
+void fill_buffer(127,3334
+void close_buffer(158,3882
+int reset_buffer(170,4085
+inline int get_character(199,4873
+inline void unget_character(212,5170
+void lisp_print_string(220,5351
+void c_print_string(236,5569
+void prolog_print_string(250,5749
+void print_string(266,5976
+inline void print_separator(281,6202
+inline void print_number(292,6348
+void other_stuff(299,6448
+void lisp_quote(324,6918
+void prolog_quote(342,7151
+void put_word(360,7407
+void put_bound(379,7687
+int preceded_by 408,8540
+int sentence_bound(418,8807
+#define C_START	491,10768
+#define C_MORE	492,10787
+#define C_TRAILER	493,10805
+#define C_QUOTABLE	494,10825
+#define C_SENTENCE	495,10846
+int get_word(497,10869
+void skip_to_eof(578,12625
+void sanitize_doc_id(591,12917
+int read_document(614,13266
+void process_file(744,16128
+char *read_and_fix_line(761,16471
+void configure_delimiters(836,18072
+int main(861,18739
+
+grams.c,17
+int main(25,645
+
+hash.c,390
+static unsigned int hash(37,1067
+hash_table make_hash_table(52,1399
+static hash_bucket make_bucket(75,1918
+hash_bucket find(90,2243
+hash_bucket find_or_create(110,2670
+hash_value must_find(128,2964
+void insert(151,3671
+void insert_new(164,3899
+hash_value the_string(185,4320
+hash_value the_int(196,4455
+hash_value the_float(207,4588
+hash_value the_voidp(218,4726
+main(232,4908
+
+hd.c,28
+main(39,965
+copy(107,2446
+
+hwcount.c,43
+void count_words(26,642
+int main(57,1168
+
+intern_word.c,83
+hash_bucket intern_word(22,502
+char *get_interned_string(34,744
+int main(40,819
+
+leaky_cache.c,66
+leaky_cache make_leaky_cache(17,185
+void count_in_cache(53,1092
+
+lwcount.c,132
+static long hash3(45,1272
+#define HASHC 51,1409
+char *read_and_intern_word(89,1919
+void count_lines(112,2349
+int main(144,2992
+
+map_file.c,44
+int file_size(7,109
+char *map_file(24,513
+
+stringpool.c,273
+#define INITIAL_POOL_SIZE 31,767
+void allocate_pool(38,941
+void new_word(51,1232
+char *latest_word(56,1282
+void addch(61,1328
+char *get_word(89,1831
+char *get_line(120,2267
+void free_last_word(138,2495
+pool_marker mark_pool(144,2592
+void release_to_mark(153,2725
+
+total.c,40
+int total_file(16,219
+int main(39,558
+
+unhd.c,47
+main(26,715
+int unhex(43,946
+undump(50,1025
+
+bit_count.h,0
+
+chi2_lib.h,0
+
+disk_hash.h,405
+#define DH_NULL 1,0
+#define dh_key(dh_key2,21
+#define dh_ptr(dh_ptr3,104
+#define dh_internalize_ptr(dh_internalize_ptr5,191
+typedef int dh_pointer;dh_pointer7,265
+typedef int dh_key;dh_key10,353
+} dh_value;dh_value17,495
+typedef struct dh_element dh_element19,508
+} *dh_bucket;dh_bucket23,671
+} *dh_buffer;dh_buffer28,785
+} *dh_table;dh_table35,897
+#define for_hash(for_hash71,2001
+
+error.h,0
+
+hash.h,211
+} hash_value;hash_value10,218
+typedef struct s_hash_element s_hash_element13,292
+} *hash_bucket;hash_bucket17,470
+} *hash_table;hash_table23,710
+#define for_hash(for_hash57,1868
+#define HASH_H59,1994
+
+leaky_cache.h,65
+} cache_cell;cache_cell5,65
+} *leaky_cache;leaky_cache24,688
+
+lwcount.h,65
+} cache_cell;cache_cell5,65
+} *leaky_cache;leaky_cache24,688
+
+map_file.h,25
+#define _map_file_h2,20
+
+stringpool.h,108
+#define STRINGPOOL_H2,21
+typedef struct s_pool_marker s_pool_marker3,42
+} pool_marker;pool_marker6,109
+
+xvector.h,382
+#define x_malloc 63,1770
+#define x_calloc 65,1795
+#define x_vector(x_vector68,1827
+#define x_create(x_create70,1908
+#define x_free(x_free73,2045
+#define x_push(x_push75,2093
+#define x_resize(x_resize76,2184
+#define x_length(x_length81,2354
+#define x_pop(x_pop82,2387
+#define x_delete(x_delete83,2435
+#define x_nth(x_nth85,2511
+#define x_extend(x_extend87,2551

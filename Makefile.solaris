@@ -1,0 +1,3 @@
+CC = cc
+ARCH_CFLAGS = 
+ARCH_LDLIBS = -lnsl -lsocket -ldl

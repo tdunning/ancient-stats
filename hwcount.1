@@ -1,0 +1,68 @@
+.\" ted's homebrew stats programs
+.TH hwcount L "22 Oct 1993"
+.SH NAME
+hwcount \- count tokens
+.SH SYNOPSIS
+.B hwcount
+[
+.B \-sv
+] 
+[ 
+.IR files ...
+]
+.SH DESCRIPTION
+.IX  hwcount  ""  "\fLhwcount\fP \(em count unique lines"
+.IX  "count unique lines"
+.LP
+.B hwcount
+reads text from specified files or from the standard input if no files
+are given or a file called "-" is used and counts the number of times
+that each unique line occurs.  This is useful when used in conjunction
+with a program like 
+.B fwords
+or
+.B grams
+which produce lines which are a word or short sequence of words.  The
+counts produced by 
+.B hwcount
+can be analyzed using programs such as 
+.B chi2
+or
+.B compare.
+.PP
+For example,
+.IP
+example% fwords x y | hwcount | sort -n
+.LP
+counts the words which appear in the files \fIx\fP and \fIy\fP and
+then sorts the counted words so that the most common words appear
+last. 
+.LP
+For large input files, it may be helpful to use the -s option which
+does not right justify the counts and thus decreases the size of the
+output. 
+.SH OPTIONS
+.TP
+.B \-s
+Produce output which is not quite so voluminous, but which is not as
+pretty.  Without \fB-s\fP, all of the counts will be right aligned.
+With it, they will be printed flush left.  This not only can save
+space, but can save considerable amounts of time.
+.TP
+.B \-v
+Print statistics on the performance of the hash table package.  The
+total number of hash chains used, the average chain length and the
+minimum and maximum chain length are all given.
+.SH "SEE ALSO"
+.BR grams (L),
+.BR cgram (L),
+.BR compare (L),
+.BR words (L),
+.BR fwords (L),
+.SH NOTES
+.LP
+The program 
+.B hwcount
+is roughly equivalent to 
+.B sort | uniq -c
+but is \fImuch\fP faster.

@@ -1,0 +1,4 @@
+CC = gcc
+ARCH_CFLAGS = -g -Wall -DNTGCC
+ARCH_LDLIBS = 
+ARCH_DRAND = drand.o
