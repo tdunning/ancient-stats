@@ -20,7 +20,7 @@ The rest of the code should have documentation here in the form of man pages.  M
 I am happy to answer questions about the statistical theory behind this code, but the code itself
 should be considered a lost cause, rooted as it is in a time and place too far away to much matter.
 
-To Compile
+to compile
 =========
 
 On Linux, do this:
@@ -31,4 +31,7 @@ On other operating systems, linux may be the best bet since things have converge
 code was written.  I have verified that the code compiles on OSX using the linux option, for instance.
 
 
+why are headlines in lower case?
+==============
 
+That is the way I used to write things.  Seems appropriate to do that here.
