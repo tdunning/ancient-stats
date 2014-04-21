@@ -1,3 +1,0 @@
-CC = gcc
-ARCH_CFLAGS = -Wall
-ARCH_LDLIBS = 
