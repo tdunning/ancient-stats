@@ -141,10 +141,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#ifndef NTGCC
-#include <malloc.h>
-#endif
-
 #include "hash.h"
 #include "xvector.h"
 #include "intern_word.h"
@@ -278,7 +274,6 @@ int main(int argc, char *argv[])
 {
     int  i, j, k;
     int  history, sentence_bound = 0;
-    char *malloc(), *calloc();
     word_info *old;
 
     int width, depth, backup, random;

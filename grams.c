@@ -29,7 +29,6 @@ char *v[];
     int  i;
     int  history;
     char **old, *t;
-    char *malloc(), *calloc();
 
     if (c == 1) history = 3;
     else {

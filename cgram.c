@@ -10,17 +10,14 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <ctype.h>
-
-#ifndef NTGCC
-#include <malloc.h>
-#endif
 
 int  chars_read=0;
 int  next;
 char *buffer;
 
-inline int getch(FILE *f)
+int getch(FILE *f)
 {
     int ch;
 

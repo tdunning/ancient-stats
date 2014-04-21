@@ -38,10 +38,6 @@ $Log: compare.c,v $
 #include <string.h>
 #include <math.h>
 
-#ifndef NTGCC
-#include <malloc.h>
-#endif
-
 #include "chi2_lib.h"
 #include "error.h"
 #include "hash.h"
@@ -74,7 +70,6 @@ double lr(table, rows, cols)
 int **table;
 int rows, cols;
 {
-    char *calloc();
     double sum;
     int *rowsums, *colsums;
     int total;
@@ -113,7 +108,6 @@ int argc;
 char *argv[];
 {
     int i, j;
-    char *calloc();
     extern int optind, getopt();
     hash_bucket el1, el2;	/* for looping through tables */
     hash_table t1, t2;		/* to store words and counts */

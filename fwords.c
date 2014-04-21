@@ -209,7 +209,7 @@ int reset_buffer(FILE *f, char *bound)
 }
 	
 /* read the next character.  check for virtual EOF's and buffer underflows */
-inline int get_character(FILE *f)
+int get_character(FILE *f)
 {
     if (buffer_point >= buffer_fill) {
 	return EOF;		       /* can't do it, hard EOF */
@@ -222,7 +222,7 @@ inline int get_character(FILE *f)
     }
 }
 
-inline void unget_character(int ch)
+void unget_character(int ch)
 {
     while (buffer_point && buffer[buffer_point] != ch) {
 	buffer_point--;
@@ -291,7 +291,7 @@ char *s;
 }
 
 /* print a language dependent separator */
-inline void print_separator()
+void print_separator()
 {
     if (prolog_print) {
 	fputs(", ", stdout);
@@ -302,7 +302,7 @@ inline void print_separator()
 }
 
 /* print a number */
-inline void print_number(d)
+void print_number(d)
 int d;
 {
     printf(number_format, d);
@@ -730,18 +730,18 @@ int read_document(FILE *f, int doc_number)
 	    if (lisp_print) {
 		printf("(doc-end ");
 		lisp_quote(doc_id);
-		printf(" %d)\n", buffer_point+strlen(doc_end));
+		printf(" %ld)\n", buffer_point+strlen(doc_end));
 	    }
 	    else if (prolog_print) {
 		printf("doc_end(");
 		prolog_quote(doc_id);
-		printf(", %d).\n", buffer_point+strlen(doc_end));
+		printf(", %ld).\n", buffer_point+strlen(doc_end));
 	    }
 	    else if (standard_token_output) {
-		printf("#end %s %d\n", doc_id, buffer_point+strlen(doc_end));
+		printf("#end %s %ld\n", doc_id, buffer_point+strlen(doc_end));
 	    }
 	    else {
-		printf("$ %s %d\n", doc_id, buffer_point+strlen(doc_end));
+		printf("$ %s %ld\n", doc_id, buffer_point+strlen(doc_end));
 	    }
 	}
 	else {

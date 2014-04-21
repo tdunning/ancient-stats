@@ -16,6 +16,7 @@ $Log: hwcount.c,v $
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "error.h"
 #include "hash.h"
@@ -66,7 +67,7 @@ char *argv[];
     int squashed_output=0;
 
     int ch;
-    extern optind;
+    extern int optind;
     extern int getopt();
 
     error = 0;

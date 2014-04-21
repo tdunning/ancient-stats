@@ -46,10 +46,6 @@ $Log: intern_word.c,v $
 #include <stdlib.h>
 #include <string.h>
 
-#ifndef NTGCC
-#include <malloc.h>
-#endif
-
 #include "error.h"
 #include "hash.h"
 #include "stringpool.h"

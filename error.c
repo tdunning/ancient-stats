@@ -13,6 +13,7 @@ $Log: error.c,v $
  *
 */
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "error.h"
 
