@@ -4,7 +4,7 @@ CFLAGS = -g $(ARCH_CFLAGS)
 LDFLAGS = $(ARCH_LDFLAGS)
 LDLIBS = $(ARCH_LDLIBS)
 
-all:  hwcount cgram compare entropy fwords grams total cooc chi2 stat_tcl
+all:  hwcount cgram compare entropy fwords grams total cooc chi2 
 
 stat_tcl: stat_tcl.o
 	$(CC) $(CFLAGS) $(LDFLAGS) -o stat_tcl stat_tcl.o -ltcl -lm $(LDLIBS)
